@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+body::after {
+    content: "";
+    clip-path: polygon(0 0, 80% 0, 50% 100%, 0 100%);
+    background-color: rgba(233, 220, 215, 0.555);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.grille{
+    display: grid;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5;
+    grid-template-areas: 
+    "entete entete entete"
+    "menu menu menu"
+    "principale annonce annonce"
+    "piedDePage piedDePage piedDePage";
+}
+
+.bloc{
+    border: 1px solid rgb(255, 0, 128);
+    background-color: rgb(224, 66, 92);
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.entete{
+    grid-area: entete;
+}
+.menu{
+    grid-area: menu;
+}
+.princicpale{
+    grid-area: principale;
+}
+.annonce{
+    grid-area: annonce;
+}
+.piedDePage{
+    grid-area: piedDePage;
+}
