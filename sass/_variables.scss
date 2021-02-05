@@ -3,6 +3,8 @@ $couleur : (
     primaire: $couleur_desktop,
     primaire_pale: lighten($couleur_desktop, 40%),
     fond:rgb(242, 109, 131),
+    bleu:rgb(50, 201, 246),
+    bleu_pale:lighten(rgb(50, 201, 246), 25%) ,
     texte: rgb(221, 30, 30)
 );
 

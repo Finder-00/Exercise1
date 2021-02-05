@@ -1,0 +1,38 @@
+.animation div{
+    animation: anim-entete 1s both;
+}
+/*
+@keyframes anim-entete {
+    from{
+        transform: translateX(500vw);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.animation div:nth-of-type(1){
+    animation-delay: 0.5s;
+}
+.animation div:nth-of-type(2){
+    animation-delay: 1s;
+}
+.animation div:nth-of-type(3){
+    animation-delay: 1.5s;
+}
+.animation div:nth-of-type(4){
+    animation-delay: 2s;
+}
+.animation div:nth-of-type(5){
+    animation-delay: 2.5s;
+}
+*/
+
+$columns: 5;
+
+@for $i from 1 to $columns {
+    .animation div:nth-of-type(#{$i}){
+        width: (100%/ $i);
+        animation-delay: $i; // delais selon la boucle de la valeur columns
+    }
+}
