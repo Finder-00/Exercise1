@@ -67,7 +67,7 @@ body::after {
         padding-left: 5%;
         padding-right: 25%;
     }
-    section{
+    .animation{
         display: flex;
         justify-content: space-around;
         width: 100%;
@@ -111,9 +111,6 @@ body::after {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    .parole{
-        padding: 1.5rem;
-    }
     .compagnie{
     padding: 1%;
     display: grid;
@@ -156,7 +153,9 @@ body::after {
     color: white;
     padding: 15px;
     border-radius: 10px;
-
+    .principale p{
+        padding: 2rem;
+    }
 }
 .piedDePage{
     padding: 10px;

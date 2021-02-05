@@ -1,6 +1,28 @@
-.animation div{
-    animation: anim-entete 1s both;
+$columns: 5;
+@for $i from 1 to $columns {
+    .animation div:nth-of-type(#{$i}){
+        width: (100%/ $i);
+        animation-delay: $i; // delais selon la boucle de la valeur columns
+    }
 }
+
+.principale p{
+    animation: anim-texte-pop 1s ease-in-out both;
+}
+
+@keyframes anim-texte-pop {
+    from{
+        transform: scale(0%);
+    }
+    50%{
+        transform: scale(110%);
+    }
+    to{
+        transform: scale(100%);
+    }
+}
+
+
 /*
 @keyframes anim-entete {
     from{
@@ -26,13 +48,5 @@
 .animation div:nth-of-type(5){
     animation-delay: 2.5s;
 }
+tout cela traduit ci-dessus
 */
-
-$columns: 5;
-
-@for $i from 1 to $columns {
-    .animation div:nth-of-type(#{$i}){
-        width: (100%/ $i);
-        animation-delay: $i; // delais selon la boucle de la valeur columns
-    }
-}
