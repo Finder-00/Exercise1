@@ -1,0 +1,10 @@
+$couleur_desktop: rgb(255, 249, 245);
+$couleur : (
+    primaire: $couleur_desktop,
+    primaire_pale: lighten($couleur_desktop, 40%),
+    texte: rgb(255, 39, 39)
+);
+
+@function couleur($nom_couleur){
+    @return map-get($map: $couleur , $key: $nom_couleur)
+}
