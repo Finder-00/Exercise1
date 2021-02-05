@@ -129,10 +129,14 @@ body::after {
 }
 .principale{
     grid-area: principale;
+    color: white;
     padding: 15px;
     border-radius: 10px;
 
 }
 .piedDePage{
+    padding: 10px;
+    border: none;
+    color: white;
     grid-area: piedDePage;
 }
