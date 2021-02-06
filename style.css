@@ -1,0 +1,237 @@
+/*------------
+variable
+-------------*/
+/*------------
+mixins
+-------------*/
+/*------------
+animation
+-------------*/
+.principale p {
+  animation: anim-texte-pop 1s ease-in-out both;
+}
+
+@keyframes anim-texte-pop {
+  from {
+    transform: scale(0%);
+  }
+  50% {
+    transform: scale(110%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+
+/*
+------------
+anim des boutons
+------------
+*/
+.animation div {
+  animation: anim-entete 1s ease-in-out both;
+}
+
+@keyframes anim-entete {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animation div:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+
+.animation div:nth-of-type(2) {
+  animation-delay: 1s;
+}
+
+.animation div:nth-of-type(3) {
+  animation-delay: 1.5s;
+}
+
+.animation div:nth-of-type(4) {
+  animation-delay: 2s;
+}
+
+.animation div:nth-of-type(5) {
+  animation-delay: 2.5s;
+}
+
+/*------------
+layout
+-------------*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff9f5;
+}
+
+body::after {
+  content: "";
+  clip-path: circle(58.6% at 70% 94%);
+  background-color: #ffcdb2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.grille {
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "entete entete entete" "menu menu menu" "annonce annonce annonce" "principale principale principale" "piedDePage piedDePage piedDePage";
+}
+
+@media (min-width: 1000px) {
+  .grille {
+    grid-template-areas: "entete entete entete" "menu menu menu" "principale annonce annonce" "piedDePage piedDePage piedDePage";
+  }
+}
+
+.bloc {
+  border: 1px solid #ff0080;
+  background-color: #e0425c;
+  margin-left: 0;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.entete {
+  grid-area: entete;
+  margin-top: 3%;
+  font-size: 1.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.entete h1 {
+  padding-left: 5%;
+  padding-right: 25%;
+}
+
+.entete .animation {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.entete .animation div {
+  color: white;
+  background-color: #32c9f6;
+  text-align: center;
+  border-radius: 150px;
+  width: 33px;
+}
+
+.entete .animation div:hover {
+  transition: all 0.3s ease-in-out;
+  box-shadow: #ace9fb 3px 5px 5px;
+  cursor: pointer;
+}
+
+.menu {
+  grid-area: menu;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+
+.menu div {
+  transition: all .2s;
+  padding: 5px 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.menu div:hover {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f26d83;
+}
+
+.annonce {
+  grid-area: annonce;
+  grid-template-rows: minmax(150px, 25%) 1fr;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.annonce .compagnie {
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 3;
+}
+
+.annonce .compagnie svg {
+  grid-row: 1/3;
+  min-width: 40%;
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+  padding: 10px;
+}
+
+.annonce .compagnie .nouvelle {
+  grid-column: 2/4;
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+.annonce .compagnie .google {
+  color: red;
+}
+
+.annonce .compagnie .amazon {
+  color: #f4ab0e;
+}
+
+.annonce .compagnie .facebook {
+  color: #2ca4ff;
+}
+
+.annonce .compagnie:nth-child(3) svg, .annonce .compagnie:last-of-type svg {
+  min-width: 10px;
+  max-width: 21.5%;
+}
+
+.principale {
+  grid-area: principale;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.principale .principale p {
+  padding: 2rem;
+}
+
+.piedDePage {
+  padding: 10px;
+  border: none;
+  color: white;
+  grid-area: piedDePage;
+}
+/*# sourceMappingURL=style.css.map */
