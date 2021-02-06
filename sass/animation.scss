@@ -33,7 +33,7 @@ anim des boutons
         transform: translateX(0);
     }
 }
-
+// bug, doit mettre 6 au lieu de 5, aucune idee pourquoi
 $columns: 6;
 @for $i from 1 to $columns {
     .animation div:nth-of-type(#{$i}){
