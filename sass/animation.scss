@@ -1,3 +1,6 @@
+/*------------
+anim du texte bloc en pop-up
+------------ */
 .principale p{
     animation: anim-texte-pop 1s ease-in-out both;
 }
@@ -14,13 +17,9 @@
     }
 }
 
-
-
-/*
-------------
+/*------------
 anim des boutons
-------------
-*/
+------------ */
 .animation div{
     animation: anim-entete 1s ease-in-out both;
 }
@@ -34,9 +33,39 @@ anim des boutons
     }
 }
 // bug, doit mettre 6 au lieu de 5, aucune idee pourquoi
-$columns: 6;
+$columns: 5;
 @for $i from 1 to $columns {
     .animation div:nth-of-type(#{$i}){
         animation-delay: .5*$i#{s}; // delais selon la boucle de la valeur columns
+    }
+}
+
+
+/*------------
+anim du texte Conception d'interface
+------------ */
+$columns: 5;
+@for $i from 1 through $columns {
+    .principale h3:nth-of-type(#{$i}){
+        animation: anim-#{$i} 1s .5*$i#{s} both;
+    }
+}
+$tabTranslat:(
+    1: translateY(-500px),
+    2: translateY(-600px),
+    3: translateX(-500px),
+    4: translateY(-500px),
+    5: translateY(-500px)
+);
+
+
+@each $i, $element in $tabTranslat {
+    @keyframes anim-#{$i}{
+        from{
+            transform: $element;
+        }
+        to{
+            transform: translate(0);
+        }
     }
 }

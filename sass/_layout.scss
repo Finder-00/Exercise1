@@ -145,12 +145,17 @@ body::after {
     }
 }
 .principale{
+    display: flex;
+    flex-direction: column;
     grid-area: principale;
     color: white;
     padding: 15px;
     border-radius: 10px;
     .principale p{
         padding: 2rem;
+    }
+    h3{
+        padding: 0.8rem 0;
     }
 }
 .piedDePage{
