@@ -32,15 +32,14 @@ anim des boutons
         transform: translateX(0);
     }
 }
-// bug, doit mettre 6 au lieu de 5, aucune idee pourquoi
-$columns: 6;
+
+$columns: 6; // bug, doit mettre 6 au lieu de 5, aucune idee pourquoi
 @for $i from 1 to $columns {
     /* $i */
     .animationBouton div:nth-of-type(#{$i}){
         animation-delay: .5*$i#{s}; // delais selon la boucle de la valeur columns
     }
 }
-
 
 /*------------
 anim du texte Conception d'interface
@@ -59,7 +58,6 @@ $tabTranslat:(
     5: translateY(-500px)
 );
 
-
 @each $i, $element in $tabTranslat {
     @keyframes anim-#{$i}{
         from{
@@ -69,4 +67,17 @@ $tabTranslat:(
             transform: translate(0) rotate(0);
         }
     }
+}
+
+/*------------
+anim des boutons avec JavaScript
+------------ */
+.fermeture{
+    font-size: 3em;
+    // animation: fermer 2s both;
+}
+
+@keyframes fermer{
+    from{transform: translateX(0px);}
+    to{transform: translateX(-100px);}
 }
