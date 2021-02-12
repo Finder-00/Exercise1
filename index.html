@@ -10,7 +10,11 @@
     <section class="grille">
         <header class="bloc entete">
             <h1>Entête</h1>
-            <section class="animation">
+                <input type="checkbox" id="chkburger">
+                <label for="chkburger" id="burger" >
+                    <img src="https://s2.svgbox.net/hero-outline.svg?ic=menu-alt-1&color=44156f" width="32" height="32">
+                </label>
+            <section class="animationBouton">
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>
@@ -55,5 +59,29 @@
         <footer class="bloc piedDePage">fin !</footer>
         
     </section>
+
+    <script>
+        let actif = false;
+        let burger = document.getElementById("burger");
+        let bouton = document.querySelectorAll(".animationBouton div");
+        
+        burger.addEventListener('mousedown', function(){
+            if(actif == true){
+                for(i=0; i<bouton.length; i++){
+                    bouton[i].classList.remove('fermeture');
+                }
+                burger.style.backgroundColor = "white";
+                actif = false;
+            }
+            else if(actif == false){
+                for(i=0; i<bouton.length; i++){
+                    bouton[i].classList.add('fermeture');
+                }
+                burger.style.backgroundColor = "rgb(229, 245, 255)";
+                burger.style.transition = '.5s';
+                actif = true;
+              }
+        })
+    </script>
 </body>
 </html>
