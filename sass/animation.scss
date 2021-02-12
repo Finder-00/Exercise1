@@ -72,12 +72,15 @@ $tabTranslat:(
 /*------------
 anim des boutons avec JavaScript
 ------------ */
-.fermeture{
-    font-size: 3em;
-    // animation: fermer 2s both;
+.animationBouton .fermeture{
+    animation: invisible .5s both;
 }
 
-@keyframes fermer{
-    from{transform: translateX(0px);}
-    to{transform: translateX(-100px);}
+@keyframes invisible{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
