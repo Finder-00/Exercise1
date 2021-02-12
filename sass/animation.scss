@@ -20,7 +20,7 @@ anim du texte bloc en pop-up
 /*------------
 anim des boutons
 ------------ */
-.animation div{
+.animationBouton div{
     animation: anim-entete 1s ease-in-out both;
 }
 
@@ -33,9 +33,10 @@ anim des boutons
     }
 }
 // bug, doit mettre 6 au lieu de 5, aucune idee pourquoi
-$columns: 5;
+$columns: 6;
 @for $i from 1 to $columns {
-    .animation div:nth-of-type(#{$i}){
+    /* $i */
+    .animationBouton div:nth-of-type(#{$i}){
         animation-delay: .5*$i#{s}; // delais selon la boucle de la valeur columns
     }
 }
@@ -47,7 +48,7 @@ anim du texte Conception d'interface
 $columns: 5;
 @for $i from 1 through $columns {
     .principale h3:nth-of-type(#{$i}){
-        animation: anim-#{$i} 1s .5*$i#{s} both;
+        animation: anim-#{$i} 1s .0*$i#{s} both;
     }
 }
 $tabTranslat:(
@@ -62,10 +63,10 @@ $tabTranslat:(
 @each $i, $element in $tabTranslat {
     @keyframes anim-#{$i}{
         from{
-            transform: $element;
+            transform: $element rotateY(720deg);
         }
         to{
-            transform: translate(0);
+            transform: translate(0) rotate(0);
         }
     }
 }

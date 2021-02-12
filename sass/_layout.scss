@@ -48,7 +48,7 @@ body::after {
 
 .bloc{
     border: 1px solid rgb(255, 0, 128);
-    background-color: rgb(224, 66, 92);
+    background-color: rgb(232, 70, 97);
     margin-left: 0;
     display: flex;
     place-items: center;
@@ -67,7 +67,7 @@ body::after {
         padding-left: 5%;
         padding-right: 25%;
     }
-    .animation{
+    .animationBouton{
         display: flex;
         justify-content: space-around;
         width: 100%;
@@ -84,8 +84,23 @@ body::after {
             cursor: pointer;
         }
     }
-
 }
+
+#chkburger{display: none;}
+
+#burger{
+padding-right: 10px;
+order: 1;
+}
+
+#chkburger:checked ~ .animationBouton div{
+    background-color: rgb(0, 153, 255);
+}
+
+#chkburger:checked ~ #burger{
+    
+}
+
 .menu{
     grid-area: menu;
     display: flex;
