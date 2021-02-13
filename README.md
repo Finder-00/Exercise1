@@ -1,2 +1,2 @@
 # Exercise1
-https://github.com/Finder-00/Exercise1
+https://finder-00.github.io/Exercise1/
